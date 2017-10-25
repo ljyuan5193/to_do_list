@@ -1,0 +1,17 @@
+<table class="table table-striped table-condensed">
+
+ <% @todolists.each do |todolist| %>
+  <tr>
+     <td><%= todolist.name %></td>
+     <td><%= todolist.duedate %></td>
+     <td><%= link_to 'Show', todolist_path(todolist) %></td>
+     <td><%= link_to 'Edit', edit_todolist_path(todolist) %></td>
+     <td><%= link_to 'Destroy', todolist_path(todolist), method: :delete, data:{ confirm: "Are you sure?" } %></td>
+   </tr>
+ <% end %>
+</table>
+
+
+<br><%= "#{$errormsg}" %></br>
+<br><%= link_to "New todolist", new_todolist_path %></br>
+<%= "現在時間：""#{Time.now.strftime("%Y:%m:%d:%H:%M:%S")}" %>

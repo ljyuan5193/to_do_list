@@ -1,0 +1,25 @@
+<% if @todolists.errors.present? %>
+  <ul>
+    <% @todolists.errors.each do |error, message| %>
+      <li> <%= "#{error.capitalize}  #{message}" %></li>
+    <% end %>
+  </ul>
+<% end %>
+<div class="form container">
+<%= form_for @todolists do |f| %>
+
+<div class="form-group">
+<%= f.label :name, "Name" %>
+<%= f.text_field :name ,class: "form-control"%>
+</div>
+<div class="form-group">
+<%= f.label :duedate, "Duedate" %>
+<%= f.text_field :duedate ,class: "form-control"%>
+</div>
+<div class="form-group">
+<%= f.label :note, "Note" %>
+<%= f.text_field :note ,class: "form-control"%>
+</div>
+<%= f.submit %>
+<% end %>
+</div>

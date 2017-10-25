@@ -1,0 +1,6 @@
+<br><%= @todolists.name %></br>
+<br><%= @todolists.duedate %></br>
+<br><%= @todolists.note %></br>
+
+<%= simple_format(@todolists.description) %>
+<%= link_to 'Back to index',todolists_path %>
